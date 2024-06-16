@@ -10,17 +10,21 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SwaggerConfig {
     @Bean
-    public OpenAPI customOpenApi(){
+    public OpenAPI customOpenAPI() {
         return new OpenAPI().info(apiInfo());
     }
-
-    private Info apiInfo(){
+    private Info apiInfo() {
         return new Info()
-                .title("FakeStore")
-                .license(apiLicense());
+                .title("Fake Store")
+                .description("")
+                .version("1.0")
+                //.contact(apiContact())
+                .license(apiLicence());
+    }
+    private License apiLicence() {
+        return new License()
+                .name("MIT Licence")
+                .url("https://opensource.org/licenses/mit-license.php");
     }
 
-    private License apiLicense(){
-        return new License().name("MIT License").url("https://opensource.org/licenses");
-    }
 }

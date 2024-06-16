@@ -31,13 +31,24 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	//Open Api Swagger
 	implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.8.0'
+
 	//Java
+	implementation group: 'jakarta.validation', name: 'jakarta.validation-api', version: '3.0.2'
+	compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
+	compileOnly group: 'javax.servlet.jsp', name: 'javax.servlet.jsp-api', version: '2.3.3'
+	compileOnly group: 'jakarta.servlet', name: 'jakarta.servlet-api', version: '6.0.0'
+	compileOnly group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '4.0.0'
+	implementation group: 'jakarta.persistence', name: 'jakarta.persistence-api', version: '3.1.0'
 
 
 	//JWT
 	implementation group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.12.5'
 	runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-jackson', version: '0.12.5'
 	runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-impl', version: '0.12.5'
+	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.17.1'
+
+
+	implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-core', version: '10.1.16'
 
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
