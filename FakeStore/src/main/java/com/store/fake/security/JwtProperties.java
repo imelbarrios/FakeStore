@@ -1,7 +1,7 @@
 package com.store.fake.security;
 
 public class JwtProperties {
-    private String SecretKey = "1aT8Q~DMDZS2PxcJK-klUKW8~JBN113uNFcncbZB";
+    private String SecretKey = "1aT8QDMDZS2PxcJKklUKW8JBN11";
 
     public String getSecretKey() {
         return SecretKey;
