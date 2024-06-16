@@ -29,6 +29,9 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.projectlombok:lombok'
+	implementation group: 'org.springframework', name: 'spring-webmvc', version: '6.0.14'
+	implementation group: 'org.springframework', name: 'spring-web', version: '6.0.19'
+
 	//Open Api Swagger
 	implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.8.0'
 

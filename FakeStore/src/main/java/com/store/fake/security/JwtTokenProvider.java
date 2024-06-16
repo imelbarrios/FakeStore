@@ -21,10 +21,10 @@ public class JwtTokenProvider {
     public static final int ACCESS_TOKEN_EXPIRATION = 60 * 60 * 1000; // 1 hour
 
     public Key getKey(){
-        return Keys.hmacShaKeyFor(jwtProperties.getSecretKey().getBytes(StandardCharsets.UTF_8));
+        return Keys.hmacShaKeyFor(jwtProperties.getSecretKey().getBytes(StandardCharsets.UTF_16));
     }
 
-    public String createToken(Long id, String userName, String nombre) {
+    public String createToken(int id, String userName, String nombre) {
 
 
         long nowMillis = System.currentTimeMillis();
@@ -32,7 +32,7 @@ public class JwtTokenProvider {
 
         return Jwts.builder()
                 .setAudience(userName)
-                .setId(id.toString())
+                .setId(String.valueOf(id))
                 .setIssuedAt(now)
                 .setIssuer(nombre)
                 .setExpiration(new Date(System.currentTimeMillis() + REFRESH_TOKE_EXPIRATION))
@@ -41,11 +41,11 @@ public class JwtTokenProvider {
 
     }
 
-    public  String refreshToken(Long id, String userName, String nombre){
+    public  String refreshToken(int id, String userName, String nombre){
 
         return Jwts.builder()
                 .setAudience(userName)
-                .setId(id.toString())
+                .setId(String.valueOf(id))
                 .setIssuer(nombre)
                 .setExpiration(new Date(System.currentTimeMillis() +  ACCESS_TOKEN_EXPIRATION))
                 .signWith(getKey())

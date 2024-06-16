@@ -23,7 +23,8 @@ public final class CommonConstants {
      * Messages
      */
 
-    public  static  final String APPROVED_CREDENTIALS = "Approved credentials";
+    public static final String APPROVED_CREDENTIALS = "Approved credentials";
+    public static final String USER_NOT_FOUND = "User not found";
 
 
 }

@@ -1,9 +1,13 @@
 package com.store.fake.request;
 
-public class LoginRequest {
+import jakarta.validation.constraints.NotNull;
 
+public class LoginRequest {
+    @NotNull(message = "Email is required")
     private String email;
+    @NotNull(message = "Username is required")
     private String username;
+    @NotNull(message = "Password is required")
     private String password;
 
     public String getEmail() {
