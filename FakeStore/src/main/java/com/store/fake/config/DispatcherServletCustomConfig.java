@@ -15,6 +15,6 @@ public class DispatcherServletCustomConfig {
     @RequestMapping("/v1/FakeStore")
     public @interface V1APIController{
         @AliasFor(annotation = Component.class)
-        String value() default "dev";
+        String value() default "";
     }
 }

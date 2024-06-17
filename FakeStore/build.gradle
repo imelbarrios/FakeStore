@@ -1,7 +1,8 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.3.0'
+	id 'org.springframework.boot' version '3.1.6'
 	id 'io.spring.dependency-management' version '1.1.5'
+	id 'jacoco'
 }
 
 group = 'com.store'
@@ -31,9 +32,19 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	implementation group: 'org.springframework', name: 'spring-webmvc', version: '6.0.14'
 	implementation group: 'org.springframework', name: 'spring-web', version: '6.0.19'
-
+	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	//BD
+	runtimeOnly 'com.microsoft.sqlserver:mssql-jdbc'
 	//Open Api Swagger
-	implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.8.0'
+	implementation group: 'io.springfox', name: 'springfox-boot-starter', version: '3.0.0'
+	implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+	implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.0.0'
+	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.16.0'
+	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.16.0'
+	implementation group: 'org.springframework', name: 'spring-webmvc', version: '6.0.14'
+	implementation "io.swagger.core.v3:swagger-annotations:2.2.15"
 
 	//Java
 	implementation group: 'jakarta.validation', name: 'jakarta.validation-api', version: '3.0.2'

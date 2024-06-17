@@ -24,7 +24,7 @@ public class JwtTokenProvider {
         return Keys.hmacShaKeyFor(jwtProperties.getSecretKey().getBytes(StandardCharsets.UTF_16));
     }
 
-    public String createToken(int id, String userName, String nombre) {
+    public String createToken(int id, String userName, String name) {
 
 
         long nowMillis = System.currentTimeMillis();
@@ -34,19 +34,19 @@ public class JwtTokenProvider {
                 .setAudience(userName)
                 .setId(String.valueOf(id))
                 .setIssuedAt(now)
-                .setIssuer(nombre)
+                .setIssuer(name)
                 .setExpiration(new Date(System.currentTimeMillis() + REFRESH_TOKE_EXPIRATION))
                 .signWith(getKey())
                 .compact();
 
     }
 
-    public  String refreshToken(int id, String userName, String nombre){
+    public  String refreshToken(int id, String userName, String name){
 
         return Jwts.builder()
                 .setAudience(userName)
                 .setId(String.valueOf(id))
-                .setIssuer(nombre)
+                .setIssuer(name)
                 .setExpiration(new Date(System.currentTimeMillis() +  ACCESS_TOKEN_EXPIRATION))
                 .signWith(getKey())
                 .compact();
@@ -60,7 +60,7 @@ public class JwtTokenProvider {
             Claims claims = Jwts.parser().setSigningKey(getKey()).build().parseClaimsJws(token).getBody();
 
             tokenDetail.put("ID", claims.getId());
-            tokenDetail.put("Nombre", claims.getAudience());
+            tokenDetail.put("Name", claims.getAudience());
             tokenDetail.put("Subject", claims.getSubject());
             tokenDetail.put("Issuer", claims.getIssuer());
             tokenDetail.put("Expiration", claims.getExpiration());

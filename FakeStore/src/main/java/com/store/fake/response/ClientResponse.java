@@ -1,28 +1,34 @@
 package com.store.fake.response;
 
-import lombok.AllArgsConstructor;
+
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Builder
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class ClientResponse {
 
-    private int id;
+    private Long id;
     private  String email;
     private String username;
     private  String password;
     private  String firstname;
     private String lastname;
 
-    public int getId() {
+    public ClientResponse(Long id, String email, String username, String password, String firstname, String lastname) {
+        this.id = id;
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.firstname = firstname;
+        this.lastname = lastname;
+    }
+
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

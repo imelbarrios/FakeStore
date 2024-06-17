@@ -25,6 +25,11 @@ public final class CommonConstants {
 
     public static final String APPROVED_CREDENTIALS = "Approved credentials";
     public static final String USER_NOT_FOUND = "User not found";
-
+    public static final String NOT_FOUND = "Information was not found";
+    public static final String SUCCESS_RESULT = "Successful result";
+    public static final String SUCCESS_SAVE = "Saved successfully";
+    public static final String SUCCESS_UPDATE = "Updated successfully";
+    public static final String SUCCESS_ORDER = "The purchase order was successfully registered";
+    public static final String SUCCESS_PAYMENT = "Payment was successfully made";
 
 }

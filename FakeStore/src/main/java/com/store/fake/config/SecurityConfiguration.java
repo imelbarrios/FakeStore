@@ -40,8 +40,7 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/v1/FakeStore/Login").permitAll()
                         .requestMatchers("/**").permitAll()
-                        .requestMatchers("/swagger-ui/**",  "/v3/api-docs/**","/v2/api-docs/**","/swagger-resources/**").permitAll()
-
+                        .requestMatchers("/swagger/**","/v2/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(new JwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)
@@ -52,7 +51,6 @@ public class SecurityConfiguration {
 
         web.ignoring().requestMatchers("/v2/api-docs",
                 "/configuration/ui",
-                "/v3/api-docs/**",
                 "/swagger-resources/**",
                 "/configuration/security",
                 "/swagger-ui.html",

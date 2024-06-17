@@ -15,10 +15,13 @@ import java.util.stream.Collectors;
 
 
 @Service
-@RequiredArgsConstructor
 public class IUserServiceImpl implements IUserServiceProxy {
     private static final Logger logger = LoggerFactory.getLogger(IUserServiceImpl.class);
-    private final RestTemplate restTemplate;
+    private final RestTemplate restTemplate ;
+
+    public IUserServiceImpl(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
 
 
     @Override
