@@ -1,0 +1,1142 @@
+{
+	"info": {
+		"_postman_id": "d3876f29-3005-4aaf-9bde-e5ca3f840cf7",
+		"name": "Fake Store",
+		"description": "Online store with your shopping cart and order processing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4143726"
+	},
+	"item": [
+		{
+			"name": "v1",
+			"item": [
+				{
+					"name": "FakeStore",
+					"item": [
+						{
+							"name": "Clients",
+							"item": [
+								{
+									"name": "Get all clients",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{Token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/FakeStore/Clients",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"FakeStore",
+												"Clients"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Get all clients",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/FakeStore/Clients",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"FakeStore",
+														"Clients"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"status\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"data\": {},\n  \"requestDate\": \"<dateTime>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Get customer by id",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{Token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/FakeStore/Clients/Id/3",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"FakeStore",
+												"Clients",
+												"Id",
+												"3"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Get customer by id",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/FakeStore/Clients/Id/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"FakeStore",
+														"Clients",
+														"Id",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"status\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"data\": {},\n  \"requestDate\": \"<dateTime>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Modification of customer information",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{Token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\n  \"idClient\": \"3\",\n  \"email\": \"kevin@gmail.com\",\n  \"firstname\": \"kevin\",\n  \"lastname\": \"morrison\",\n  \"username\": \"ryan\",\n  \"password\": \"kev02937@\",\n  \"phone\": \"1-567-094-1345\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/FakeStore/Client",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"FakeStore",
+												"Client"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Modification of customer information",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"<string>\",\n  \"firstname\": \"<string>\",\n  \"lastname\": \"<string>\",\n  \"username\": \"<string>\",\n  \"idClient\": \"<long>\",\n  \"password\": \"<string>\",\n  \"phone\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/FakeStore/Client",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"FakeStore",
+														"Client"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"status\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"data\": {},\n  \"requestDate\": \"<dateTime>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Save customer information",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"email\": \"kevin@gmail.com\",\n  \"firstname\": \"kevin\",\n  \"lastname\": \"morrison\",\n  \"username\": \"ryan\",\n  \"password\": \"kev02937@\",\n  \"phone\": \"1-567-094-1345\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/FakeStore/Client",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"FakeStore",
+												"Client"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Save customer information",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"<string>\",\n  \"firstname\": \"<string>\",\n  \"lastname\": \"<string>\",\n  \"username\": \"<string>\",\n  \"idClient\": \"<long>\",\n  \"password\": \"<string>\",\n  \"phone\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/FakeStore/Client",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"FakeStore",
+														"Client"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"status\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"data\": {},\n  \"requestDate\": \"<dateTime>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Login",
+							"item": [
+								{
+									"name": "Login to the application",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": null,\n    \"username\": \"johnd\",\n    \"password\": \"m38rmF$\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/FakeStore/Login",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"FakeStore",
+												"Login"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Login",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"password\": \"<string>\",\n  \"username\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/FakeStore/Login",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"FakeStore",
+														"Login"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"status\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"data\": {},\n  \"requestDate\": \"<dateTime>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "RefreshToken",
+							"item": [
+								{
+									"name": "Generate Refresh Token",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{Token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/FakeStore/RefreshToken",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"FakeStore",
+												"RefreshToken"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Generate Refresh Token",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/FakeStore/RefreshToken",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"FakeStore",
+														"RefreshToken"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"status\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"data\": {},\n  \"requestDate\": \"<dateTime>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Products",
+							"item": [
+								{
+									"name": "Get all products",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/FakeStore/Products",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"FakeStore",
+												"Products"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Get all products",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/FakeStore/Products",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"FakeStore",
+														"Products"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"status\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"data\": {},\n  \"requestDate\": \"<dateTime>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Get product by category",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/FakeStore/Products/Category/women's clothing",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"FakeStore",
+												"Products",
+												"Category",
+												"women's clothing"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Get product by category",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/FakeStore/Products/Category/:type",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"FakeStore",
+														"Products",
+														"Category",
+														":type"
+													],
+													"variable": [
+														{
+															"key": "type"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"status\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"data\": {},\n  \"requestDate\": \"<dateTime>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Get product by id",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/FakeStore/Products/Id/10",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"FakeStore",
+												"Products",
+												"Id",
+												"10"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Get product by id",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/FakeStore/Products/Id/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"FakeStore",
+														"Products",
+														"Id",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"status\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"data\": {},\n  \"requestDate\": \"<dateTime>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "ProcessOrder",
+							"item": [
+								{
+									"name": "Create purchase order",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"idClient\": 3,\n  \"orderDetailRequests\": [\n    {\n      \"idProduct\": 1,\n      \"amount\": 5\n    },\n    {\n      \"idProduct\": 2,\n      \"amount\": 3\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/FakeStore/ProcessOrder",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"FakeStore",
+												"ProcessOrder"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Create purchase order",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"idOrder\": \"<long>\",\n  \"idClient\": \"<long>\",\n  \"orderDetailRequests\": [\n    {\n      \"idOrderDetail\": \"<long>\",\n      \"idProduct\": \"<long>\",\n      \"amount\": \"<integer>\"\n    },\n    {\n      \"idOrderDetail\": \"<long>\",\n      \"idProduct\": \"<long>\",\n      \"amount\": \"<integer>\"\n    }\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/FakeStore/ProcessOrder",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"FakeStore",
+														"ProcessOrder"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"status\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"data\": {},\n  \"requestDate\": \"<dateTime>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Order confirmation and payment",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"idOrder\": 1,\n   \"idClient\": 3,\n  \"orderDetailRequests\": [\n    {\n      \"idProduct\": 1,\n      \"amount\": 5\n    },\n    {\n      \"idProduct\": 2,\n      \"amount\": 3\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/FakeStore/ProcessOrder/Payment",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"FakeStore",
+												"ProcessOrder",
+												"Payment"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Order confirmation and payment",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"idOrder\": \"<long>\",\n  \"idClient\": \"<long>\",\n  \"orderDetailRequests\": [\n    {\n      \"idOrderDetail\": \"<long>\",\n      \"idProduct\": \"<long>\",\n      \"amount\": \"<integer>\"\n    },\n    {\n      \"idOrderDetail\": \"<long>\",\n      \"idProduct\": \"<long>\",\n      \"amount\": \"<integer>\"\n    }\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/FakeStore/ProcessOrder/Payment",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"FakeStore",
+														"ProcessOrder",
+														"Payment"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"status\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"data\": {},\n  \"requestDate\": \"<dateTime>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Orders",
+							"item": [
+								{
+									"name": "Get all orders",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/FakeStore/Orders",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"FakeStore",
+												"Orders"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Get all orders",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/FakeStore/Orders",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"FakeStore",
+														"Orders"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"status\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"data\": {},\n  \"requestDate\": \"<dateTime>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Get order by customer id",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/FakeStore/Orders/IdClient/3",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"FakeStore",
+												"Orders",
+												"IdClient",
+												"3"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Get order by customer id",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/FakeStore/Orders/IdClient/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"FakeStore",
+														"Orders",
+														"IdClient",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"status\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"data\": {},\n  \"requestDate\": \"<dateTime>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Get order by id",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/FakeStore/Order/Id/1",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"FakeStore",
+												"Order",
+												"Id",
+												"1"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Get order by id",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/FakeStore/Order/Id/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"FakeStore",
+														"Order",
+														"Id",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"status\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"data\": {},\n  \"requestDate\": \"<dateTime>\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8081"
+		},
+		{
+			"key": "Token",
+			"value": "eyJhbGciOiJIUzM4NCJ9.eyJhdWQiOiJqb2huZCIsImp0aSI6IjEiLCJpYXQiOjE3MTg2NjMxODUsImlzcyI6ImRvZSIsImV4cCI6MTcxODcwNjM4NX0.DDrLYAWZ2v-QcgOc2oXyvrvz39JoLxA2C9xSCl74DySgD3A5aGn0sbSKtG6VdM-z",
+			"type": "string"
+		},
+		{
+			"key": "Refresh Token",
+			"value": "eyJhbGciOiJIUzM4NCJ9.eyJhdWQiOiJqb2huZCIsImp0aSI6IjEiLCJpc3MiOiJkb2UiLCJleHAiOjE3MTg2NjY3ODV9.HNvE92hQ8cF2Zue47GDqTQT55UdLA0JxlBH3amWWJuWfKA5jnaqHHF6qtIUvKUeI",
+			"type": "string"
+		}
+	]
+}

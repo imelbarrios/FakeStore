@@ -12,9 +12,9 @@ public class DispatcherServletCustomConfig {
     @Retention(RetentionPolicy.RUNTIME)
     @Documented
     @Component
-    @RequestMapping("api/v1/FakeStore")
+    @RequestMapping("/v1/FakeStore")
     public @interface V1APIController{
         @AliasFor(annotation = Component.class)
-        String value() default "dev";
+        String value() default "";
     }
 }
