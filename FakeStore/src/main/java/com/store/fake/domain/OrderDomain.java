@@ -1,16 +1,14 @@
 package com.store.fake.domain;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 
 import java.time.LocalDateTime;
 
-@Setter
-@Getter
+@Data
 @Entity
 @Table(name = "TblOrder")
 public class OrderDomain {
@@ -29,6 +27,8 @@ public class OrderDomain {
     @Column(name = "Status", nullable = false)
     private  int status;
 
+    @Getter
+    @Setter
     @ManyToOne(cascade=CascadeType.ALL, targetEntity=ClientDomain.class)
     @JoinColumn(name = "IdClient", referencedColumnName="IdClient",insertable = false, updatable = false)
     private ClientDomain client;

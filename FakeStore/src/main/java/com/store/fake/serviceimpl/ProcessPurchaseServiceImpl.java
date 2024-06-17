@@ -14,6 +14,8 @@ import com.store.fake.response.OrderResponse;
 import com.store.fake.service.IClientService;
 import com.store.fake.service.IProcessPurchaseService;
 import com.store.fake.service.IProductService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -23,6 +25,9 @@ import java.util.List;
 
 @Service
 public class ProcessPurchaseServiceImpl implements IProcessPurchaseService {
+
+    private static final Logger logger = LoggerFactory.getLogger(ProcessPurchaseServiceImpl.class);
+
 
     private final IOrderRepository orderRepository;
     private final IOrderDetailRepository orderDetailRepository;
@@ -48,11 +53,13 @@ public class ProcessPurchaseServiceImpl implements IProcessPurchaseService {
         orderDomain.setIdClient(orderRequest.getIdClient());
         orderDomain.setOrderdate(LocalDateTime.now());
         orderDomain.setStatus(1);
-        OrderDomain order = orderRepository.save(orderDomain);
+        OrderDomain order = orderRepository.saveAndFlush(orderDomain);
 
-        ClientResponse client = clientService.getFindById(orderDomain.getIdClient());
+        logger.info("idOrder is :{}", order.getIdOrder());
+        OrderDomain orderConfirmation = orderRepository.findByRecordId(order.getIdOrder());
+        logger.info("Order Information Create:{}", orderConfirmation.toString());
 
-        return orderMapService.mapOrderResponse(orderDomain,null,null);
+        return orderMapService.mapOrderResponse(orderConfirmation,null,null);
     }
 
     @Override
@@ -74,6 +81,10 @@ public class ProcessPurchaseServiceImpl implements IProcessPurchaseService {
 
         OrderDomain orderDomain = orderRepository.findByRecordId(idOrder);
         List<OrderDetailDomain> orderDetailDomain1 = orderDetailRepository.findAllByIdOrder(idOrder);
+
+        logger.info("Order Information :{}", orderDomain.toString());
+
+        logger.info("Order Detail Information :{}", orderDetailDomain1.toString());
 
         return orderMapService.mapOrderResponse(orderDomain,orderDetailDomain1,null);
     }

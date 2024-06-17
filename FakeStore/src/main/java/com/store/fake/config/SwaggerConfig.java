@@ -8,7 +8,6 @@ import io.swagger.v3.oas.models.info.License;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-
 @Configuration
 public class SwaggerConfig {
     @Bean
@@ -17,10 +16,9 @@ public class SwaggerConfig {
     }
     private Info apiInfo() {
         return new Info()
-                .title("Sarlaft Api Catalogo")
-                .description("Consulta de servicios de ")
-                .version("4.0")
-                //.contact(apiContact())
+                .title("Fake Store")
+                .description("Online store with your shopping cart and order processing")
+                .version("1.0")
                 .license(apiLicence());
     }
     private License apiLicence() {

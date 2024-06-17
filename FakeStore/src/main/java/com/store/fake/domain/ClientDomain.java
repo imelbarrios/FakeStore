@@ -10,16 +10,12 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 
-@Setter
-@Getter
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
 @Table(name = "TblClient")
 public class ClientDomain {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Idclient", nullable = false)
+    @Column(name = "IdClient", nullable = false)
     private  Long idClient;
 
     @Column(name = "Email", nullable = true)

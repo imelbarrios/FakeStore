@@ -1,8 +1,8 @@
 package com.store.fake.response;
 
-import lombok.Builder;
+import lombok.Data;
 
-@Builder
+@Data
 public class ProductResponse {
     private int id;
     private String title;
@@ -10,8 +10,7 @@ public class ProductResponse {
     private String category;
     private String image;
 
-    public ProductResponse(int id, String title, double price, String category, String image) {
-    }
+
 
     public int getId() {
         return id;

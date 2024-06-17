@@ -53,8 +53,8 @@ public class ProductController {
     }
 
     @GetMapping("/Products/Category/{type}")
-    @ApiResponse(responseCode = "200", description = "Get all products")
-    @Operation(summary = "Get all products")
+    @ApiResponse(responseCode = "200", description = "Get product by category")
+    @Operation(summary = "Get product by category")
     public ResponseEntity<GeneralResponse> getCategoryProducts(HttpServletRequest req,@PathVariable("type") String type) {
         try {
             List<ProductResponse> products = productService.getCategory(type);
@@ -74,8 +74,8 @@ public class ProductController {
     }
 
     @GetMapping("/Products/Id/{id}")
-    @ApiResponse(responseCode = "200", description = "Get all products")
-    @Operation(summary = "Get all products")
+    @ApiResponse(responseCode = "200", description = "Get product by id")
+    @Operation(summary = "Get product by id")
     public ResponseEntity<GeneralResponse> getCategoryProducts(HttpServletRequest req,@PathVariable("id") int id) {
         try {
             ProductResponse product = productService.getIdProduct(id);

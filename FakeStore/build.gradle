@@ -38,7 +38,8 @@ dependencies {
 	//BD
 	runtimeOnly 'com.microsoft.sqlserver:mssql-jdbc'
 	//Open Api Swagger
-	implementation group: 'io.springfox', name: 'springfox-boot-starter', version: '3.0.0'
+	implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
+	implementation group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
 	implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
 	implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.0.0'
 	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.16.0'
@@ -68,8 +69,4 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-}
-
-tasks.named('test') {
-	useJUnitPlatform()
 }

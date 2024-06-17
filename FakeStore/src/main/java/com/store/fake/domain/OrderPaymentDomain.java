@@ -2,17 +2,10 @@ package com.store.fake.domain;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-@Setter
-@Getter
-@AllArgsConstructor
-@NoArgsConstructor
+
 @Entity
 @Table(name = "TblOrderPayment")
 public class OrderPaymentDomain {

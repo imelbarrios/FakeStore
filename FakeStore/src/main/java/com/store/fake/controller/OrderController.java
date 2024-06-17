@@ -6,7 +6,6 @@ import com.store.fake.service.IOrdenService;
 import com.store.fake.utils.Autorizations;
 import com.store.fake.utils.CommonConstants;
 import com.store.fake.utils.GeneralResponse;
-import com.store.fake.utils.ValidateModel;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import jakarta.servlet.http.HttpServletRequest;
@@ -31,8 +30,8 @@ public class OrderController {
 
 
     @GetMapping("/Order/Id/{id}")
-    @ApiResponse(responseCode = "200", description = "Get all clients")
-    @Operation(summary = "Get all clients")
+    @ApiResponse(responseCode = "200", description = "Get order by id")
+    @Operation(summary = "Get order by id")
     public ResponseEntity<GeneralResponse> getOrderById(HttpServletRequest req, @PathVariable("id") Long id) {
         try {
             OrderResponse order = ordenService.getOrder(id);
@@ -53,8 +52,8 @@ public class OrderController {
     }
 
     @GetMapping("/Orders/IdClient/{id}")
-    @ApiResponse(responseCode = "200", description = "Get all clients")
-    @Operation(summary = "Get all clients")
+    @ApiResponse(responseCode = "200", description = "Get order by customer id")
+    @Operation(summary = "Get order by customer id")
     public ResponseEntity<GeneralResponse> getOrderByIdClient(HttpServletRequest req, @PathVariable("id") Long id) {
         try {
             List<OrderResponse> order = ordenService.getOrderByClient(id);
@@ -75,8 +74,8 @@ public class OrderController {
     }
 
     @GetMapping("/Orders")
-    @ApiResponse(responseCode = "200", description = "Get all clients")
-    @Operation(summary = "Get all clients")
+    @ApiResponse(responseCode = "200", description = "Get all orders")
+    @Operation(summary = "Get all orders")
     public ResponseEntity<GeneralResponse> getOrders(HttpServletRequest req) {
         try {
             List<OrderResponse> order = ordenService.getAllOrder();

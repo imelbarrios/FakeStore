@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 
-
 @DispatcherServletCustomConfig.V1APIController
 @RestController
 public class LoginController {
@@ -64,8 +63,8 @@ public class LoginController {
     }
 
     @GetMapping( value= "/RefreshToken")
-    @ApiResponse(responseCode = "200", description= "Generate token")
-    @Operation(summary = "Refresh Token")
+    @ApiResponse(responseCode = "200", description= "Generate Refresh Token")
+    @Operation(summary = "Generate Refresh Token")
     public ResponseEntity<GeneralResponse> refreshToken(HttpServletRequest req){
 
         Long id = Long.valueOf(jwtTokenProvider.getClaims(req,"ID")).longValue();

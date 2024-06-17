@@ -57,8 +57,8 @@ public class ClientController {
     }
 
     @GetMapping("/Clients/Id/{id}")
-    @ApiResponse(responseCode = "200", description = "Get all clients")
-    @Operation(summary = "Get all clients")
+    @ApiResponse(responseCode = "200", description = "Get customer by id")
+    @Operation(summary = "Get customer by id")
     public ResponseEntity<GeneralResponse> getAllClients(HttpServletRequest req,@PathVariable("id") Long id) {
         try {
             ClientResponse clients = clientService.getFindById(id);
@@ -78,9 +78,9 @@ public class ClientController {
         return responseClient;
     }
 
-    @PostMapping("/Clients")
-    @ApiResponse(responseCode = "200", description = "API para Guardar actividad economica")
-    @Operation(summary = "Guardar actividad economica")
+    @PostMapping("/Client")
+    @ApiResponse(responseCode = "200", description = "Save customer information")
+    @Operation(summary = "Save customer information")
     public ResponseEntity<GeneralResponse> saveClient(HttpServletRequest req,
                                                       @RequestBody ClientRequest clientDto, BindingResult result)
             throws NumberFormatException, SecurityException {
@@ -114,9 +114,9 @@ public class ClientController {
 
     }
 
-    @PutMapping("/Clients")
-    @ApiResponse(responseCode = "200", description = "API para Guardar actividad economica")
-    @Operation(summary = "Guardar actividad economica")
+    @PutMapping("/Client")
+    @ApiResponse(responseCode = "200", description = "Modification of customer information")
+    @Operation(summary = "Modification of customer information")
     public ResponseEntity<GeneralResponse> updateClient(HttpServletRequest req,
                                                       @RequestBody ClientRequest clientDto, BindingResult result)
             throws NumberFormatException, SecurityException {
