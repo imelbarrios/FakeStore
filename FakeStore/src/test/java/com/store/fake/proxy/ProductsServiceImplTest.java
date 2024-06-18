@@ -25,9 +25,14 @@ public class ProductsServiceImplTest {
 
     @Test
     void testGetAllSuccess() {
+        DataProductsResponse productsResponse = new DataProductsResponse();
+        productsResponse.setId(1);
+        productsResponse.setTitle("Product1");
+        productsResponse.setCategory("Category1");
+
         DataProductsResponse[] mockResponse = {
-                new DataProductsResponse(),
-                new DataProductsResponse()
+                productsResponse,
+                productsResponse
         };
         when(restTemplate.getForObject(anyString(), eq(DataProductsResponse[].class)))
                 .thenReturn(mockResponse);
@@ -52,9 +57,12 @@ public class ProductsServiceImplTest {
 
     @Test
     void testGetIdProductFound() {
+        DataProductsResponse productsResponse = new DataProductsResponse();
+        productsResponse.setId(1);
+        productsResponse.setTitle("Product1");
+        productsResponse.setCategory("Category1");
         DataProductsResponse[] mockResponse = {
-             //   new DataProductsResponse(1, "Product1", null,"Category1",null,null),
-               // new DataProductsResponse(2, "Product2", "Category2")
+             productsResponse
         };
         when(restTemplate.getForObject(anyString(), eq(DataProductsResponse[].class)))
                 .thenReturn(mockResponse);
@@ -68,9 +76,12 @@ public class ProductsServiceImplTest {
 
     @Test
     void testGetIdProductNotFound() {
+        DataProductsResponse productsResponse = new DataProductsResponse();
+        productsResponse.setId(1);
+        productsResponse.setTitle("Product1");
+        productsResponse.setCategory("Category1");
         DataProductsResponse[] mockResponse = {
-               // new DataProductsResponse(1, "Product1", "Category1"),
-               // new DataProductsResponse(2, "Product2", "Category2")
+              productsResponse
         };
         when(restTemplate.getForObject(anyString(), eq(DataProductsResponse[].class)))
                 .thenReturn(mockResponse);
@@ -83,10 +94,14 @@ public class ProductsServiceImplTest {
 
     @Test
     void testGetCategoryFound() {
+        DataProductsResponse productsResponse = new DataProductsResponse();
+        productsResponse.setId(1);
+        productsResponse.setTitle("Product1");
+        productsResponse.setCategory("Category1");
+
+
         DataProductsResponse[] mockResponse = {
-               // new DataProductsResponse(1, "Product1", "Category1"),
-               // new DataProductsResponse(2, "Product2", "Category2"),
-                //new DataProductsResponse(3, "Product3", "Category1")
+              productsResponse,productsResponse,productsResponse
         };
         when(restTemplate.getForObject(anyString(), eq(DataProductsResponse[].class)))
                 .thenReturn(mockResponse);
@@ -94,15 +109,18 @@ public class ProductsServiceImplTest {
         List<DataProductsResponse> result = iProductsService.getCategory("Category1");
 
         assertNotNull(result);
-        assertEquals(2, result.size());
+        assertEquals(3, result.size());
         assertEquals("Category1", result.get(0).getCategory());
     }
 
     @Test
     void testGetCategoryNotFound() {
+        DataProductsResponse productsResponse = new DataProductsResponse();
+        productsResponse.setId(1);
+        productsResponse.setTitle("Product1");
+        productsResponse.setCategory("Category1");
         DataProductsResponse[] mockResponse = {
-          //      new DataProductsResponse(1, "Product1", "Category1"),
-            //    new DataProductsResponse(2, "Product2", "Category2")
+          productsResponse,productsResponse
         };
         when(restTemplate.getForObject(anyString(), eq(DataProductsResponse[].class)))
                 .thenReturn(mockResponse);

@@ -3,6 +3,7 @@
 
 Online store with your shopping cart and order processing
 
+
 ## Table of Contents
 * [Requirements](#Requirements)
 * [API Reference](#API_Reference)
@@ -26,11 +27,48 @@ Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/
 ```shell
 mvn spring-boot:run
 ```
+
+### To access
+
+```shell
+To log in to the rest api you need the following information:
+
+```
+
+```http
+  POST /v1/FakeStore/Login
+```
+
+
+| Parameter  | Data     | Description                       |
+| :----------| :------- | :-------------------------------- |
+| `email` | `string` | **No Required**. This field is no required |
+| `username` | `string` | **Required**. This field is required |
+| `password` | `string` | **Required**. This field is required |
+
+
+
+
+Example:
+![alt text](https://github.com/imelbarrios/FakeStore/blob/feature/configuration/Token.png?raw=true)
+
+The Token lasts only 1 hour, upon expiration you need to generate another
+
+```http
+  GET /v1/FakeStore/RefreshToken
+```
+
+Example:
+
+![alt text](https://github.com/imelbarrios/FakeStore/blob/feature/configuration/Refresh%20Token.png?raw=true)
+
+
 ## API_Reference
 
 Consult Rest Api documentation:
-
-http://localhost:8081/swagger-ui/index.html
+```http
+ GET /swagger-ui/index.html
+```
 
 #### Get all items
 
