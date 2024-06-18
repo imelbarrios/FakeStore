@@ -13,7 +13,6 @@ public class DataProductsResponse {
     private String image;
     private RatinResonse rating;
 
-
     public int getId() {
         return id;
     }

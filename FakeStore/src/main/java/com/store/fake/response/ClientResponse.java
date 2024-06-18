@@ -1,10 +1,9 @@
 package com.store.fake.response;
 
 
-import lombok.Builder;
+
 import lombok.Data;
 
-@Builder
 @Data
 public class ClientResponse {
 
